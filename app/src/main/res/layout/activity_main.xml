@@ -1,18 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Custom Table"
+        android:textSize="26sp"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:id="@+id/resultLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:background="#ff0"
+        android:hint="null"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Input name"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/nameTag"
+            />
+        <TextView
+            android:id="@+id/nameTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name:"
+            android:textSize="20sp"
+            android:layout_alignTop="@id/name"
+            android:layout_alignBottom="@id/name"
+            />
+        <EditText
+            android:id="@+id/tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Input tel"
+            android:layout_below="@id/name"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/telTag"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            />
+        <TextView
+            android:id="@+id/telTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tel     :"
+            android:textSize="20sp"
+            android:layout_alignTop="@id/tel"
+            android:layout_alignBottom="@id/tel"
+            />
+        <EditText
+            android:id="@+id/birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Input Brithday"
+            android:layout_below="@id/tel"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/birthdayTag"
+            />
+        <TextView
+            android:id="@+id/birthdayTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bir      :"
+            android:textSize="20sp"
+            android:layout_alignTop="@id/birthday"
+            android:layout_alignBottom="@id/birthday"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/query"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="Query"
+            android:textAllCaps="false"
+            android:onClick="queryFun"
+            />
+        <Button
+            android:id="@+id/insert"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="Insert"
+            android:textAllCaps="false"
+            android:onClick="insertFun"
+            />
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:onClick="delFun"
+            />
+    </LinearLayout>
+</LinearLayout>
